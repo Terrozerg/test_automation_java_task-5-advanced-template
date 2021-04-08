@@ -1,20 +1,23 @@
 package com.epam.test.automation.java.practice5;
 
 public class Rectangle {
+    private double sideA;
+    private double sideB;
 
     public Rectangle(double a, double b) {
-        //TODO: Implement constructor with 'a' and 'b' parameters;
-        //TODO: set sideA and sideB to specified values;
+        if(a<0 || b<0){
+            throw new IllegalArgumentException("Cannot create rectangle with negative sides.");
+        }
+        this.sideA = a;
+        this.sideB = b;
     }
 
     public Rectangle(double a) {
-        //TODO: Implement constructor with 'a' parameter;
-        //TODO: set sideB to default value;
+        this(a,5);
     }
 
     public Rectangle() {
-        //TODO: Implement default constructor;
-        //TODO: set sideA and sideB to default values;
+        this(4,3);
     }
 
     /**
@@ -23,8 +26,7 @@ public class Rectangle {
      * </summary>
      */
     public double getSideA() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        return sideA;
     }
 
     /**
@@ -33,8 +35,7 @@ public class Rectangle {
      * </summary>
      */
     public double getSideB() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        return sideB;
     }
 
     /**
@@ -43,8 +44,7 @@ public class Rectangle {
      * </summary>
      */
     public double area() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        return sideA*sideB;
     }
 
     /**
@@ -53,8 +53,7 @@ public class Rectangle {
      * </summary>
      */
     public double perimeter() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        return 2*(sideA+sideB);
     }
 
     /**
@@ -63,8 +62,7 @@ public class Rectangle {
      * </summary>
      */
     public boolean isSquare() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        return sideA == sideB;
     }
 
     /**
@@ -73,8 +71,9 @@ public class Rectangle {
      * </summary>
      */
     public void replaceSides() {
-        //TODO: Delete line below and write your own solution;
-        throw new UnsupportedOperationException();
+        double swap = sideA;
+        sideA = sideB;
+        sideB = swap;
     }
 
 }
