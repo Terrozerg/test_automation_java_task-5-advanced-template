@@ -39,6 +39,14 @@ public class ArrayRectanglesTest {
     }
 
     @Test
+    public void testAddRectangleInFreePlace(){
+        rectangles = new Rectangle[]{new Rectangle(), null, new Rectangle(2, 3), new Rectangle(1)};
+        arrayRectangles = new ArrayRectangles(rectangles);
+
+        Assert.assertTrue(arrayRectangles.addRectangle(new Rectangle()));
+    }
+
+    @Test
     public void testAddRectangleToFullArray(){
         arrayRectangles = new ArrayRectangles(0);
         Assert.assertFalse(arrayRectangles.addRectangle(new Rectangle()));

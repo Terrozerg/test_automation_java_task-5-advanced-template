@@ -36,19 +36,22 @@ public class ArrayRectangles{
      */
     public boolean addRectangle(Rectangle rectangle) {
         if(currentSize == rectangleArray.size()) {
-            return false;
+
+            //try to replace null element
+            int index = rectangleArray.indexOf(null);
+            if(index!=-1){
+                rectangleArray.add(index, rectangle);
+
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         currentSize++;
 
-        //try to replace null element
-        int index = rectangleArray.indexOf(null);
-        if(index!=-1){
-            rectangleArray.add(index, rectangle);
-        }
-        else {
-            rectangleArray.add(rectangle);
-        }
+        rectangleArray.add(rectangle);
 
         return true;
     }
